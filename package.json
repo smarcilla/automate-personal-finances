@@ -6,6 +6,8 @@
   "scripts": {
     "build": "tsc",
     "start": "tsc && node dist/index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +27,12 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@types/node": "^18.11.17"
+    "@types/node": "^18.11.17",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier-eslint": "^15.0.1",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "tslint": "^6.1.3"
   }
 }
