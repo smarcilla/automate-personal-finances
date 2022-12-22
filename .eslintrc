@@ -1,0 +1,33 @@
+{
+    "root": true,
+    "extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:@typescript-eslint/recommended"],
+    "plugins": ["@typescript-eslint", "import", "prettier"],
+    "env": {
+      "es6": true,      
+      "node": true
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      },
+      "react": {
+        "version": "latest"
+      }
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2021
+    },
+    "overrides": [
+      {
+        "files": ["**/*.spec.ts", "**/__tests__/*", "**/__mocks__/*"],
+        "rules": {
+          "@typescript-eslint/no-explicit-any": "off"
+        }
+      }
+    ],
+    "rules": {
+      "no-unused-expressions": "off"
+    },
+    "ignorePatterns": ["dist/"]
+  }

@@ -1,0 +1,38 @@
+{
+  "name": "automate-personal-finances",
+  "version": "1.0.0",
+  "description": "This project automates personal finances.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smarcilla/automate-personal-finances.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smarcilla/automate-personal-finances/issues"
+  },
+  "homepage": "https://github.com/smarcilla/automate-personal-finances#readme",
+  "dependencies": {
+    "moment": "^2.29.4",
+    "mysql2": "^2.3.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.17",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier-eslint": "^15.0.1",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "tslint": "^6.1.3"
+  }
+}
