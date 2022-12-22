@@ -3,9 +3,13 @@ import * as xlsx from 'xlsx';
 import * as moment from 'moment';
 
 // Definimos la ruta del directorio Descargas
-const downloadsPath = '/Users/sergio/Downloads';
+const downloadsPath = process.env.INPUT_DIRECTORY_PATH
+  ? process.env.INPUT_DIRECTORY_PATH
+  : '/Users/sergio/Downloads';
 //const fileExtension = '.xlsx';
-const fileExtension = '.numbers';
+const fileExtension = process.env.FILE_EXTENSION
+  ? process.env.FILE_EXTENSION
+  : '.xlsx';
 
 // Leemos todos los archivos del directorio Descargas
 const files = fs.readdirSync(downloadsPath);
