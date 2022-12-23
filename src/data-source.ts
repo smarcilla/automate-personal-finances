@@ -13,5 +13,5 @@ export const AppDataSource = new DataSource({
   entities: [Transaction],
   subscribers: [],
   migrations: [],
-  dropSchema: false //if true you can initialize database data.
+  dropSchema: Boolean(process.env.DROP_DB) //if true you can initialize database data.
 });

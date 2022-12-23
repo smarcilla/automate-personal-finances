@@ -4,8 +4,15 @@ This project automates personal finances.
 ### how to configure it
   | NAME | DESCRIPTION   | DEFAULT |
   | ---- | ------------- | ------- |
-  | INPUT_DIRECTORY_PATH | path to the directory containing the files          | /Users/{user}/Downloads
-  | FILE_EXTENSION       | extension od the files containing the spreadsheets  | .xlsx
+  | INPUT_DIRECTORY_PATH | path to the directory containing the files          | /Users/{user}/Downloads |
+  | FILE_EXTENSION       | extension od the files containing the spreadsheets  | .xlsx |
+  | USERNAME_DB | user to connect to database ||
+  | PASSWORD_DB | password to connect to database ||
+  | NAME_DB | name of database ||
+  | PORT_DB | port when the db listens | 5432 |
+  | HOST_DB | database host | localhost |
+  | DROP_DB | drops database when execute script | false |
+
 
 ### execute database
 ```
