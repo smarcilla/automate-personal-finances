@@ -1,7 +1,7 @@
 FROM node:16
 
 # Crea el directorio de trabajo de la aplicación y establece como directorio de trabajo
-WORKDIR /app
+WORKDIR /scripts
 
 # Copia los archivos de la aplicación al directorio de trabajo
 COPY . .

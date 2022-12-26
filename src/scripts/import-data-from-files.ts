@@ -30,7 +30,7 @@ class FileImporter {
   private sanitizeDate(date: string) {
     return this.fileExtension === '.numbers'
       ? new Date(date)
-      : moment(date, 'DD/MM/YYYY').toDate();
+      : moment.utc(date, 'DD/MM/YYYY').local().toDate();
   }
 
   loadFiles() {
@@ -96,7 +96,7 @@ const main = async () => {
 
     const transactions = await fileImporter.saveInDatabase(transactionsDraft);
 
-    console.log(transactions);
+    console.log(`Number of transactions processed ${transactions.length}`);
   }
 
   console.log('Finish import data process');
