@@ -1,0 +1,28 @@
+version: '3'
+services:
+  scripts:
+    build: .
+    volumes:
+      - .:/scripts
+      - /Users/sergio/Downloads:/downloads
+    command: npm run start-import-data-from-files
+    env_file:
+      - .env
+    links:
+      - db
+    environment:
+      - NODE_ENV=development
+
+  db:
+    image: postgres
+    ports:
+      - "5433:5433"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_DB=postgres
+
+volumes:
+  pgdata:
