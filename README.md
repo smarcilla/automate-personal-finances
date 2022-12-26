@@ -1,16 +1,34 @@
 # automate-personal-finances
 This project automates personal finances.
 
+## execute function
+- To start the script
+```
+docker compose up 
+```
+
+- to stop it
+```
+docker compose down
+```
+
+
+## roadmap
+- introduce my project within docker compose image
+- create a view that represents anual report of my finances.
+
+- https://docs.nestjs.com/techniques/database
+
 ### how to configure it
   | NAME | DESCRIPTION   | DEFAULT |
   | ---- | ------------- | ------- |
-  | INPUT_DIRECTORY_PATH | path to the directory containing the files          | /Users/{user}/Downloads |
+  | INPUT_DIRECTORY_PATH | path to the directory containing the files          | /downloads |
   | FILE_EXTENSION       | extension od the files containing the spreadsheets  | .xlsx |
-  | USERNAME_DB | user to connect to database ||
+  | USERNAME_DB | user to connect to database | postgres |
   | PASSWORD_DB | password to connect to database ||
-  | NAME_DB | name of database ||
+  | NAME_DB | name of database |postgres |
   | PORT_DB | port when the db listens | 5432 |
-  | HOST_DB | database host | localhost |
+  | HOST_DB | database host | db |
   | DROP_DB | drops database when execute script | false |
 
 
