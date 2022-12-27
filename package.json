@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start-import-data-from-files": "tsc && node dist/scripts/import-data-from-files.js",
+    "start-remove-data-from-db": "tsc && node dist/scripts/remove-data-db.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "echo \"Error: no test specified\" && exit 1"

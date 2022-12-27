@@ -1,28 +1,22 @@
-version: '3'
+version: '3.8'
 services:
-  scripts:
-    build: .
-    volumes:
-      - .:/scripts
-      - /Users/sergio/Downloads:/downloads
-    command: npm run start-import-data-from-files
-    env_file:
-      - .env
-    links:
-      - db
-    environment:
-      - NODE_ENV=development
-
   db:
+    container_name: finance-postgres-db
     image: postgres
+    restart: always
     ports:
-      - "5433:5433"
+      - 5434:5434
+    expose:
+      - 5434
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - financepgdata:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=mypassword
       - POSTGRES_DB=postgres
+networks:
+  default:
+    name: finance-postgres-service_default
 
 volumes:
-  pgdata:
+  financepgdata:

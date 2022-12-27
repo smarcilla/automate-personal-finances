@@ -2,10 +2,9 @@
 This project automates personal finances.
 
 ### release feature/4
+- adds unique id to avoid duplication of transactions (done)
 - remove logs (done)
-- fix error with date convertion from string to date
-- adds unique id to avoid duplication of transactions
-- persist data between up & down db container
+- fix error with date convertion from string to date (done)
 
 
 ## execute function
@@ -21,6 +20,7 @@ docker compose down
 
 
 ## roadmap
+- persist data between up & down db container ()
 - create a view that represents anual report of my finances.
 - introduce my project within docker compose image (feature/3 done)
 
