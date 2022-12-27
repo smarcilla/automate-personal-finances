@@ -1,6 +1,12 @@
 # automate-personal-finances
 This project automates personal finances.
 
+### release feature/4
+- adds unique id to avoid duplication of transactions (done)
+- remove logs (done)
+- fix error with date convertion from string to date (done)
+
+
 ## execute function
 - To start the script
 ```
@@ -14,8 +20,10 @@ docker compose down
 
 
 ## roadmap
-- introduce my project within docker compose image
+- persist data between up & down db container ()
 - create a view that represents anual report of my finances.
+- introduce my project within docker compose image (feature/3 done)
+
 
 - https://docs.nestjs.com/techniques/database
 

@@ -1,19 +1,16 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class Transaction {
-  @PrimaryGeneratedColumn()
-  id!: number;
-
-  @Column()
+  @PrimaryColumn()
   date!: Date;
 
-  @Column()
+  @PrimaryColumn()
   concept!: string;
 
-  @Column()
+  @PrimaryColumn()
   movement!: string;
 
-  @Column({ type: 'numeric' })
+  @PrimaryColumn({ type: 'numeric' })
   amount!: number;
 }
