@@ -7,6 +7,7 @@
     "build": "tsc",
     "start-import-data-from-files": "tsc && node dist/scripts/import-data-from-files.js",
     "start-remove-data-from-db": "tsc && node dist/scripts/remove-data-db.js",
+    "start-generate-annual-report": "tsc && node dist/scripts/generate-report.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/smarcilla/automate-personal-finances#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
+    "liquidjs": "^10.3.3",
     "moment": "^2.29.4",
     "mysql2": "^2.3.3",
     "pg": "^8.8.0",

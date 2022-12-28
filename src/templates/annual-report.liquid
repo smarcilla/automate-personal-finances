@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Informe de Finanzas Personales</title>
+  </head>
+  <body>
+    <h1>Informe de Finanzas Personales</h1>
+
+    <h2>Gastos e Ingresos Anuales</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Año</th>
+          <th>Gastos</th>
+          <th>Ingresos</th>
+          <th>Saldo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for year in years %}
+          <tr>
+            <td>{{ year }}</td>
+            <td>${{ gastos[year] }}</td>
+            <td>${{ ingresos[year] }}</td>
+            <td>${{ saldo[year] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h2>Gastos e Ingresos Mensuales</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Mes</th>
+          <th>Gastos</th>
+          <th>Ingresos</th>
+          <th>Saldo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for month in months %}
+          <tr>
+            <td>{{ month }}</td>
+            <td>${{ gastos[month] }}</td>
+            <td>${{ ingresos[month] }}</td>
+            <td>${{ saldo[month] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h2>Gastos por Categoría</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th>Gastos</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for category in categories %}
+          <tr>
+            <td>{{ category }}</td>
+            <td>${{ gastos[category] }}</td>
+          </tr>
+          {% for subcategory in subcategories[category] %}
+            <tr>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ subcategory }}</td>
+              <td>${{ gastos[subcategory] }}</td>
+            </tr>
+          {% endfor %}
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h2>Ingresos por Categoría</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th>Ingresos</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for category in categories %}
+          <tr>
+            <td>{{ category }}</td>
+            <td>${{ ingresos[category] }}</td>
+          </tr>
+          {% for subcategory in subcategories[category] %}
+            <tr>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ subcategory }}</td>
+              <td>${{ ingresos[subcategory] }}</td>
+            </tr>
+          {% endfor %}
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <footer>
+      Generado el {{ current_date }}
+    </footer>
+  </body>
+</html>
