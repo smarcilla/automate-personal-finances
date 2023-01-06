@@ -1,12 +1,13 @@
 {
   "name": "automate-personal-finances",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This project automates personal finances.",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "start-import-data-from-files": "tsc && node dist/scripts/import-data-from-files.js",
     "start-remove-data-from-db": "tsc && node dist/scripts/remove-data-db.js",
+    "start-calculate-annual-report": "tsc && node dist/scripts/calculate-annual-report.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "echo \"Error: no test specified\" && exit 1"

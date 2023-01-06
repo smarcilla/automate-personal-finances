@@ -1,11 +1,8 @@
 # automate-personal-finances
 This project automates personal finances.
 
-### release feature/4
-- adds unique id to avoid duplication of transactions (done)
-- remove logs (done)
-- fix error with date convertion from string to date (done)
-
+### release feature/6
+- implements new clases to calculate the annual report using only the source excel file
 
 ## execute function
 - To start the script
