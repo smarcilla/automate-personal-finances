@@ -16,7 +16,7 @@ export class FileLoader {
     const directoryFiles = fs.readdirSync(this.inputDirectoryPath);
 
     const extensionFiles = directoryFiles.filter(
-      file => file.endsWith(this.fileExtension) && file.includes('movimientos')
+      file => file.endsWith(this.fileExtension) && file.includes('transactions')
     );
 
     return extensionFiles;

@@ -1,15 +1,14 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-require('dotenv').config();
-
 import { Report } from '../business/Report';
 import { IMPORT_STRATEGIES } from '../Constants';
 import { Importer } from '../inputs/Importer';
 import { FileLoader } from '../inputs/FileLoader';
+import { Configuration } from '../configuration/Configuration';
 
 const main = async () => {
-  const inputDirectoryPath = <string>process.env.INPUT_DIRECTORY_PATH;
-  const fileExtension = <string>process.env.FILE_EXTENSION;
-  const yearReport = 2022;
+  const configuration = Configuration.getInstance();
+  const inputDirectoryPath = configuration.directoryPath;
+  const fileExtension = configuration.fileExtension;
+  const yearReport = configuration.yearReport;
 
   const fileLoader = FileLoader.build(inputDirectoryPath, fileExtension);
 
