@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
 import * as path from 'path';
+import { IMPORT_STRATEGIES } from '../Constants';
 
 export class Configuration {
   private static instance: Configuration;
@@ -24,5 +25,14 @@ export class Configuration {
 
   public get yearReport(): number {
     return parseInt(<string>process.env.YEAR_REPORT || '2022');
+  }
+
+  public get importType(): IMPORT_STRATEGIES {
+    switch (this.fileExtension) {
+      case '.xslx':
+        return IMPORT_STRATEGIES.EXCEL_FILE;
+    }
+
+    return IMPORT_STRATEGIES.EXCEL_FILE;
   }
 }

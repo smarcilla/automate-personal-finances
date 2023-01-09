@@ -1,18 +1,20 @@
 import * as xlsx from 'xlsx';
 import { Transaction } from '../business/Transaction';
+import { Configuration } from '../configuration/Configuration';
 import { ImporterStrategy } from './ImporterStrategy';
 
 export class ExcelFileImporter implements ImporterStrategy<Transaction> {
-  static build(pathDraft: string, fileDraft: string): ExcelFileImporter {
-    return new ExcelFileImporter(pathDraft, fileDraft);
+  static build(configuration: Configuration): ExcelFileImporter {
+    return new ExcelFileImporter(configuration.directoryPath);
   }
 
-  private filePath: string;
-  constructor(pathDraft: string, fileDraft: string) {
-    this.filePath = `${pathDraft}/${fileDraft}`;
+  private dirPath: string;
+  constructor(dirPath: string) {
+    this.dirPath = dirPath;
   }
-  importData(): Transaction[] {
-    const workbook = xlsx.readFile(this.filePath);
+  importData(file: string): Transaction[] {
+    const filePath = `${this.dirPath}/${file}`;
+    const workbook = xlsx.readFile(filePath);
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
     const [, , , , , ...data] = xlsx.utils.sheet_to_json(sheet, {
       raw: false,

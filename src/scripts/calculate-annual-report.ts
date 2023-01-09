@@ -1,25 +1,17 @@
 import { Report } from '../business/Report';
-import { IMPORT_STRATEGIES } from '../Constants';
 import { Importer } from '../inputs/Importer';
 import { FileLoader } from '../inputs/FileLoader';
 import { Configuration } from '../configuration/Configuration';
 
 const main = async () => {
   const configuration = Configuration.getInstance();
-  const inputDirectoryPath = configuration.directoryPath;
-  const fileExtension = configuration.fileExtension;
   const yearReport = configuration.yearReport;
 
-  const fileLoader = FileLoader.build(inputDirectoryPath, fileExtension);
+  const fileLoader = FileLoader.build(configuration);
+  const importer = Importer.build(configuration);
 
   fileLoader.loadFiles().forEach((file: string) => {
-    const importer = Importer.build(
-      IMPORT_STRATEGIES.EXCEL_FILE,
-      inputDirectoryPath,
-      file
-    );
-
-    const transactions = importer.importData();
+    const transactions = importer.importData(file);
 
     const annualReport = Report.build(transactions, yearReport);
 

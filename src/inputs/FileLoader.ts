@@ -1,8 +1,12 @@
 import * as fs from 'fs';
+import { Configuration } from '../configuration/Configuration';
 
 export class FileLoader {
-  static build(inputDirectoryPath: string, fileExtension: string) {
-    return new FileLoader(inputDirectoryPath, fileExtension);
+  static build(configuration: Configuration) {
+    return new FileLoader(
+      configuration.directoryPath,
+      configuration.fileExtension
+    );
   }
 
   private inputDirectoryPath: string;

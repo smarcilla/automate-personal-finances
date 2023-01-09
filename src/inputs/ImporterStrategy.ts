@@ -1,3 +1,3 @@
 export interface ImporterStrategy<T> {
-  importData(): T[];
+  importData(file: string): T[];
 }
