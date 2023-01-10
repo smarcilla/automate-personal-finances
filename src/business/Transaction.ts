@@ -20,7 +20,7 @@ export class Transaction {
   }
 
   private date: TransactionDate;
-  private concept: Concept;
+  private _concept: Concept;
   private movement: Movement;
   private _amount: Amount;
 
@@ -31,7 +31,7 @@ export class Transaction {
     amount: Amount
   ) {
     this.date = date;
-    this.concept = concept;
+    this._concept = concept;
     this.movement = movement;
     this._amount = amount;
   }
@@ -42,6 +42,10 @@ export class Transaction {
 
   get amount() {
     return this._amount.amount;
+  }
+
+  get concept() {
+    return this._concept;
   }
 
   isIncome() {

@@ -1,7 +1,7 @@
 import { Report } from '../business/Report';
 import { ReportPrinter } from './ReportPrinter';
 
-export class ConsoleReportPrinter implements ReportPrinter<Report> {
+export class ConsoleReportPrinter implements ReportPrinter<Report> {    
   print(report: Report): void {
     console.log(report.title);
     console.log('-----------------------------------------');

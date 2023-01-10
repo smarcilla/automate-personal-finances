@@ -5,11 +5,9 @@ export class Report {
     return new Report(transactions, year);
   }
 
-  private transactions: Transaction[];
   private year: number;
 
-  constructor(transactions: Transaction[], year: number) {
-    this.transactions = transactions;
+  constructor(public transactions: Transaction[], year: number) {
     this.year = year;
   }
 

@@ -12,15 +12,15 @@ const main = async () => {
   const fileLoader = FileLoader.build(configuration);
   const importer = Importer.build(configuration);
 
+  const printerFactory: ReportPrinterFactory<Report> =
+    new ConsoleReportPrinterFactory();
+
+  const reportPrinter = printerFactory.createPrinter();
+
   fileLoader.loadFiles().forEach((file: string) => {
     const transactions = importer.importData(file);
 
     const annualReport = Report.build(transactions, yearReport);
-
-    const printerFactory: ReportPrinterFactory<Report> =
-      new ConsoleReportPrinterFactory();
-
-    const reportPrinter = printerFactory.createPrinter();
 
     reportPrinter.print(annualReport);
   });

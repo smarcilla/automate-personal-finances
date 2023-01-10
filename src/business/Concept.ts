@@ -8,4 +8,8 @@ export class Concept {
   constructor(conceptDraft: string) {
     this.concept = conceptDraft;
   }
+
+  isEqual(other: Concept) {
+    return other.concept === this.concept;
+  }
 }
