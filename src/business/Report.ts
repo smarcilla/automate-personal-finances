@@ -13,6 +13,10 @@ export class Report {
     this.year = year;
   }
 
+  get title() {
+    return `Annual report ${this.year}`;
+  }
+
   get annualIncomes() {
     return this.transactions
       .filter(transaction => transaction.year === this.year)

@@ -2,6 +2,8 @@ import { Report } from '../business/Report';
 import { Importer } from '../inputs/Importer';
 import { FileLoader } from '../inputs/FileLoader';
 import { Configuration } from '../configuration/Configuration';
+import { ConsoleReportPrinterFactory } from '../presentation/ConsoleReportPrinterFactory';
+import { ReportPrinterFactory } from '../presentation/ReportPrinterFactory';
 
 const main = async () => {
   const configuration = Configuration.getInstance();
@@ -15,16 +17,12 @@ const main = async () => {
 
     const annualReport = Report.build(transactions, yearReport);
 
-    console.log(
-      `Annual report ${yearReport} for ${file} is --> total result ${annualReport.annualResult.toFixed(
-        2
-      )}`
-    );
-    console.log(
-      `Total incomes ${annualReport.annualIncomes.toFixed(
-        2
-      )} ---  Total expenses ${annualReport.annualExpenses.toFixed(2)}`
-    );
+    const printerFactory: ReportPrinterFactory<Report> =
+      new ConsoleReportPrinterFactory();
+
+    const reportPrinter = printerFactory.createPrinter();
+
+    reportPrinter.print(annualReport);
   });
 };
 
