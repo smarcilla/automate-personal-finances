@@ -1,6 +1,4 @@
-export interface FinancesStrategy {
-  execute(): void;
-}
+import { FinancesStrategy } from './interfaces';
 
 export class FinancesContext {
   private strategy!: FinancesStrategy;
