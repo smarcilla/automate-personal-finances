@@ -1,6 +1,9 @@
+import { FinancesContext } from './finances';
+
 class Main {
   static main() {
-    console.log('Initial version Finances library');
+    const financeContext = FinancesContext.create();
+    financeContext.executeStrategy();
   }
 }
 
