@@ -1,10 +1,10 @@
 import { FinancesContext } from './finances';
 
-class Main {
+class Client {
   static main() {
     const financeContext = FinancesContext.create();
     financeContext.executeStrategy();
   }
 }
 
-Main.main();
+Client.main();
